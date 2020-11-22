@@ -35,4 +35,4 @@ jobs:
       run: npm install --global surge
 
     - name: Deploy to Surge
-      run: surge ./build anasali_p4a.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build anasali_p4a.surge.sh ${{ secrets.SURGE_TOKEN }}
