@@ -21,21 +21,37 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    
-    - name: Install NodeJS
-      uses: actions/setup-node@v2-beta
+
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v1.4.3
       with:
-        node-version: 12
+        # Set always-auth in npmrc
+        always-auth: # optional, default is false
+        # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
+        node-version: # optional, default is 10.x
+        # Optional registry to set up for auth. Will set the registry in a project level .npmrc and .yarnrc file, and set up auth to read in from env.NODE_AUTH_TOKEN
+        registry-url: # optional
+        # Optional scope for authenticating against scoped registries
+        scope: # optional
+        # Deprecated. Use node-version instead. Will not be supported after October 1, 2019
+        version: # optional
     
-    - uses: borales/actions-yarn@v2.0.0
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@v2.1.0
       with:
-        cmd: install # will run `yarn install` command
+        # Yarn command
+        cmd: 
+        # NPM_AUTH_TOKEN
+        auth-token: # optional
+        # NPM_REGISTRY_URL
+        registry-url: # optional
         
-    - name: Build React App
+    - name: Creating build
       run: yarn build
       
-    - name: Install Surge
-      run: npm install --global surge
+    # Runs a set of commands using the runners shell
+    - name: Installing surge
+      run: sudo npm install --global surge
 
     - name: Deploy to Surge
       run: surge ./build anasali-p4a.surge.sh --token ${{ secrets.SURGE_TOKEN }}
