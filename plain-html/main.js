@@ -5,7 +5,7 @@ var sceneryFrames = [
 
 var sceneryTiming = {
     duration : 4000,
-    iterations: Infinity, // Repeat once
+    iterations: Infinity, 
 
     
   
