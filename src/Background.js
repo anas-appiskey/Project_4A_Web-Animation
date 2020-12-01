@@ -20,7 +20,7 @@ var sceneryTiming = {
     duration : 6000,
     iterations: Infinity, // Repeat once
 }
-  const { ref, playStates } = useWebAnimations({
+  const { ref } = useWebAnimations({
     keyframes: sceneryFrames,
     timing: sceneryTiming
    

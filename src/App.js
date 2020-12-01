@@ -25,7 +25,7 @@ var sceneryTiming_man = {
     
   
 }
-  const { ref, playState } = useWebAnimations({
+  const { ref} = useWebAnimations({
     keyframes: sceneryFrames_man,
     timing: sceneryTiming_man
    
