@@ -19,7 +19,7 @@ var sceneryFrames_man = [
 
 var sceneryTiming_man = {
     duration : 1000,
-    iterations: Infinity, // Repeat once
+    iterations: Infinity, 
 
     
   
