@@ -14,7 +14,7 @@ var sceneryTiming = {
 
 var sceneryFrames_man = [
     { transform: "translateX(0px)" },
-    { transform: "translateX(-40px)" },
+    { transform: "translateX(-20px)" },
 ]
 
 var sceneryTiming_man = {
